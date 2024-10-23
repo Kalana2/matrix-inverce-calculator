@@ -1,9 +1,4 @@
-    
-a = [
-    [1, 2, 1],
-    [3, 4, 1],
-    [5, 5, 4]
-]
+
 
 def determinant (a):
     if(len(a) == 2):
@@ -44,7 +39,55 @@ def cofactor (a):
 
     return cofactorMatrix
 
+
+
 def inverse(a):
 
-    #calculate ajoint matrix
+    determinantOfMatrix = determinant(a)
+
+    if (determinantOfMatrix == 0 ):
+        raise Exception("Matrix is singular, Does not exits inverse.")
     
+    cofactorMatrix = cofactor(a)
+    adjointMatrix = [[0] * len(a) for _ in range(len(a))] 
+ 
+    #calculate ajoint matrix
+    for row in range(len(a)):
+        for col in range(len(a)):
+            adjointMatrix[col][row] = cofactorMatrix[row][col]
+
+    inverseMartix = [[adjointMatrix[row][col]/determinantOfMatrix for col in range(len(a))] for row in range(len(a))]
+
+    return inverseMartix
+
+
+
+
+def displayMatrix(matrix):
+    numberOfRows = len(matrix)
+
+    for row in range(numberOfRows):
+        print(matrix[row])
+
+
+
+    
+a = [
+    [1, 2, 1],
+    [3, 4, 1],
+    [5, 5, 4]
+]
+
+b = [
+    [1,1,0],
+    [2,3,0],
+    [5,6,0]
+]
+
+
+try:
+    matrix = inverse(b)
+    displayMatrix(matrix)
+
+except Exception as error:
+    print(error)
