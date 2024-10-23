@@ -1,4 +1,4 @@
-
+    
 a = [
     [1, 2, 1],
     [3, 4, 1],
@@ -18,5 +18,3 @@ def determinant (a):
         totalDet += sign * a[0][col] * determinant(minor)
     
     return totalDet
-
-
