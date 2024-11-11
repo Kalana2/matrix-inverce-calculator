@@ -2,15 +2,6 @@
 
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
-## Table of Contents
-- [About the Project](#about-the-project)
-- [Features](#features)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Functions Overview](#functions-overview)
-- [Contributing](#contributing)
-- [License](#license)
-- [Contact](#contact)
 
 ## About the Project
 
