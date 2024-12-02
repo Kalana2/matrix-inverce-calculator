@@ -61,15 +61,22 @@ def inverse(a):
     return inverseMartix
 
 
-
-
 def displayMatrix(matrix):
     numberOfRows = len(matrix)
 
     for row in range(numberOfRows):
         print(matrix[row])
 
+def getInput():
+    row = int(input("Enter number of Rows :"))
+    col = int(input("Enter number of Col :"))
 
+    matrix = [row][col]
+
+    for row in range(0, row):
+        for col in range(0, col):
+            print(matrix)
+            matrix[row][col] = int(input("_")) 
 
     
 a = [
