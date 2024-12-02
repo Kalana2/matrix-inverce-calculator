@@ -67,16 +67,27 @@ def displayMatrix(matrix):
     for row in range(numberOfRows):
         print(matrix[row])
 
+        
+
 def getInput():
-    row = int(input("Enter number of Rows :"))
-    col = int(input("Enter number of Col :"))
+    row_count = int(input("Enter number of Rows: "))
+    col_count = int(input("Enter number of Cols: "))
+    
+    print(f"Matrix dimensions: {row_count} x {col_count}")
+    
+    matrix = [[0 for _ in range(col_count)] for _ in range(row_count)]
+    
+    print("Enter the matrix values:\n")
+    for row in range(row_count):
+        for col in range(col_count):
+            print(f"Enter value for position ({row}, {col}): ", end="")
+            matrix[row][col] = int(input())
+    
+    print("Final Matrix:")
+    for row in matrix:
+        print(row)
+    return matrix
 
-    matrix = [row][col]
-
-    for row in range(0, row):
-        for col in range(0, col):
-            print(matrix)
-            matrix[row][col] = int(input("_")) 
 
     
 a = [
@@ -93,7 +104,9 @@ b = [
 
 
 try:
-    matrix = inverse(b)
+    matrix = getInput()
+    matrix = inverse(matrix)
+    print("\n\n Output \n ")
     displayMatrix(matrix)
 
 except Exception as error:
