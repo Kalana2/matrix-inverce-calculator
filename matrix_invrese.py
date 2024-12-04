@@ -70,16 +70,15 @@ def displayMatrix(matrix):
         
 
 def getInput():
-    row_count = int(input("Enter number of Rows: "))
-    col_count = int(input("Enter number of Cols: "))
+    row_count = int(input("Enter number of Rows/cols: "))
     
-    print(f"Matrix dimensions: {row_count} x {col_count}")
+    print(f"Matrix dimensions: {row_count} x {row_count}")
     
-    matrix = [[0 for _ in range(col_count)] for _ in range(row_count)]
+    matrix = [[0 for _ in range(row_count)] for _ in range(row_count)]
     
     print("Enter the matrix values:\n")
     for row in range(row_count):
-        for col in range(col_count):
+        for col in range(row_count):
             print(f"Enter value for position ({row}, {col}): ", end="")
             matrix[row][col] = int(input())
     
